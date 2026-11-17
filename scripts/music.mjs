@@ -1,7 +1,7 @@
 // Publishes the game's music: "theme" for the menus, and one piece per stage, named by the stage's id.
 //
 //   npm run music                      publish every piece (generating its picked take first if that is missing)
-//   npm run music -- --retake theme    generate three fresh takes of one or more pieces, to choose between
+//   npm run music -- --retake theme    throw away one or more pieces and generate them afresh
 //   npm run music -- --dry             just list what would be generated
 //
 // Pieces are listed in scripts/music.json. Each is either
@@ -20,7 +20,8 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, unlinkS
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const TAKES = 3;
+// Music is costly to generate: one take of each piece, and no more.
+const TAKES = 1;
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
