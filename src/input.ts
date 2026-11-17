@@ -188,4 +188,11 @@ export function initInput(): void {
     );
   });
   document.addEventListener('contextmenu', (e) => e.preventDefault());
+  // Two quick taps in the same place must not zoom the page: phone browsers ignore the viewport's
+  // user-scalable=no, so the tap's default action is cancelled instead. Everything here listens
+  // for pointer events, which still arrive.
+  document.addEventListener('touchend', (e) => e.preventDefault(), { passive: false });
+  document.addEventListener('dblclick', (e) => e.preventDefault());
+  // Nor must a pinch (Safari's own gesture event).
+  document.addEventListener('gesturestart', (e) => e.preventDefault());
 }
