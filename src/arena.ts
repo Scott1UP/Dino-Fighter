@@ -2,6 +2,7 @@
 import { Ambience } from './ambience';
 import { art, type Box } from './assets';
 import { sfx } from './audio';
+import { BACK, BACK_KEYS, drawControls } from './controls';
 import { button, H, inside, panel, type Rect, text, W } from './draw';
 import { type Fighter, FULL, GROUND_Y, type Wave } from './fighter';
 import { game, type Scene } from './game';
@@ -30,8 +31,9 @@ interface Bit {
 /** The pause button, top middle of the screen. Its touch area is bigger than the drawing. */
 const PAUSE: Rect = { x: W / 2 - 10, y: 0, w: 20, h: 11 };
 const PAUSE_TOUCH: Rect = { x: W / 2 - 26, y: 0, w: 52, h: 34 };
-const RESUME: Rect = { x: W / 2 - 100, y: 116, w: 200, h: 34 };
-const QUIT: Rect = { x: W / 2 - 100, y: 160, w: 200, h: 34 };
+const RESUME: Rect = { x: W / 2 - 100, y: 104, w: 200, h: 34 };
+const CONTROLS: Rect = { x: W / 2 - 100, y: 148, w: 200, h: 34 };
+const QUIT: Rect = { x: W / 2 - 100, y: 192, w: 200, h: 34 };
 
 export abstract class Arena implements Scene {
   abstract pads: 1 | 2;
@@ -41,6 +43,8 @@ export abstract class Arena implements Scene {
   protected freeze = 0;
   protected t = 0;
   protected paused = false;
+  /** The controls screen, opened from the pause menu. */
+  private help = false;
   private sparks: Spark[] = [];
   protected bits: Bit[] = [];
   protected waves: Wave[] = [];
@@ -95,8 +99,10 @@ export abstract class Arena implements Scene {
     if (!this.paused) return;
     g.fillStyle = 'rgb(0 0 40 / 0.7)';
     g.fillRect(0, 0, W, H);
-    text(g, 'PAUSED', W / 2, 70, { size: 24, align: 'center', color: '#ffd23a' });
+    if (this.help) return drawControls(g);
+    text(g, 'PAUSED', W / 2, 62, { size: 24, align: 'center', color: '#ffd23a' });
     button(g, RESUME, 'RESUME', true, 16);
+    button(g, CONTROLS, 'CONTROLS', false, 16);
     button(g, QUIT, 'QUIT', false, 16);
   }
 
@@ -105,18 +111,29 @@ export abstract class Arena implements Scene {
     sfx('pause', 0.7);
   }
 
+  private showHelp(on: boolean): void {
+    this.help = on;
+    sfx('tap');
+  }
+
   tap(x: number, y: number): void {
-    if (this.paused) {
+    if (this.help) {
+      if (inside(BACK, x, y)) this.showHelp(false);
+    } else if (this.paused) {
       if (inside(RESUME, x, y)) this.pause(false);
+      else if (inside(CONTROLS, x, y)) this.showHelp(true);
       else if (inside(QUIT, x, y)) this.quit();
     } else if (inside(PAUSE_TOUCH, x, y)) this.pause(true);
     else this.touched(x, y);
   }
 
   key(code: string): void {
-    if (code === 'Escape' || code === 'KeyP') this.pause(!this.paused);
+    if (this.help) {
+      if (BACK_KEYS.includes(code)) this.showHelp(false);
+    } else if (code === 'Escape' || code === 'KeyP') this.pause(!this.paused);
     else if (this.paused) {
       if (code === 'Enter' || code === 'Space') this.pause(false);
+      else if (code === 'KeyC') this.showHelp(true);
       else if (code === 'KeyQ') this.quit();
     } else this.pressed(code);
   }

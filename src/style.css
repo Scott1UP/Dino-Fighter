@@ -70,7 +70,7 @@ body.with-pads {
 
 /* With two players each gets a compact set in their own corner, buttons towards the middle. */
 #pads.two {
-  --size: clamp(46px, 9.4vw, 96px);
+  --size: clamp(40px, 6.5vw, 72px);
 }
 #pads.two .pad {
   flex: 0 1 auto;

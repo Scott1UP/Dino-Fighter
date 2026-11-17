@@ -3,8 +3,10 @@ import { art, BOSSES, homeStage, PLAYABLE, STAGES } from './assets';
 import { music, sfx, unlockAudio, voice } from './audio';
 import { backdrop, button, H, inside, panel, type Rect, text, W } from './draw';
 import { Bonus, LEVELS } from './bonus';
+import { BACK, BACK_KEYS, drawControls } from './controls';
 import { Match } from './fight';
 import { game, type Scene } from './game';
+import { usingTouch } from './input';
 import { bossesUnlocked, easyMode, setEasyMode, unlockBosses } from './settings';
 
 type Mode = 'story' | 'versus' | 'bonus';
@@ -70,7 +72,8 @@ class Modes implements Scene {
       ['BONUS STAGE', 'bonus'],
     ] as const
   ).map(([label, mode], i) => ({ label, mode, r: { x: W / 2 - 110, y: 118 + i * 40, w: 220, h: 32 } }));
-  private readonly easy: Rect = { x: W / 2 - 110, y: 240, w: 220, h: 22 };
+  private readonly easy: Rect = { x: 101, y: 240, w: 160, h: 22 };
+  private readonly controls: Rect = { x: 267, y: 240, w: 112, h: 22 };
 
   constructor() {
     void music('theme');
@@ -82,7 +85,14 @@ class Modes implements Scene {
     drifting(g, this.t);
     logo(g, W / 2, 8, Math.round((108 * art.logo.width) / art.logo.height));
     this.items.forEach((it, i) => button(g, it.r, it.label, i === this.at && blink(this.t, 20), 16));
-    button(g, this.easy, `EASY MODE: ${easyMode() ? 'ON' : 'OFF'}`, easyMode());
+    // With a keyboard, the small buttons show the key that works them.
+    const hint = (key: string) => (usingTouch() ? '' : ` (${key})`);
+    button(g, this.easy, `EASY MODE: ${easyMode() ? 'ON' : 'OFF'}${hint('E')}`, easyMode());
+    button(g, this.controls, `CONTROLS${hint('C')}`, false);
+  }
+  private showControls(): void {
+    sfx('tap');
+    game.go(new Controls());
   }
   private toggleEasy(): void {
     setEasyMode(!easyMode());
@@ -94,6 +104,7 @@ class Modes implements Scene {
   }
   tap(x: number, y: number): void {
     if (inside(this.easy, x, y)) return this.toggleEasy();
+    if (inside(this.controls, x, y)) return this.showControls();
     const i = this.items.findIndex((it) => inside(it.r, x, y));
     if (i >= 0) this.choose(i);
   }
@@ -103,9 +114,29 @@ class Modes implements Scene {
     else if (code === 'ArrowUp' || code === 'KeyW') this.at = (this.at + n - 1) % n;
     else if (CONFIRM.includes(code)) return this.choose(this.at);
     else if (code === 'KeyE') return this.toggleEasy();
+    else if (code === 'KeyC') return this.showControls();
     else if (code === 'Escape') return game.go(new Title());
     else return;
     sfx('tap');
+  }
+}
+
+/** What to press, reached from the mode select screen. */
+class Controls implements Scene {
+  update(): void {}
+  draw(g: CanvasRenderingContext2D): void {
+    backdrop(g);
+    drawControls(g);
+  }
+  private back(): void {
+    sfx('tap');
+    game.go(new Modes());
+  }
+  tap(x: number, y: number): void {
+    if (inside(BACK, x, y)) this.back();
+  }
+  key(code: string): void {
+    if (BACK_KEYS.includes(code)) this.back();
   }
 }
 
