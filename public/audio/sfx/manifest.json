@@ -1,0 +1,130 @@
+{
+  "tap": {
+    "take": 1,
+    "loop": false
+  },
+  "confirm": {
+    "take": 1,
+    "loop": false
+  },
+  "swing": {
+    "take": 1,
+    "loop": false
+  },
+  "hitLight": {
+    "take": 2,
+    "loop": false
+  },
+  "hitHeavy": {
+    "take": 3,
+    "loop": false
+  },
+  "jump": {
+    "take": 1,
+    "loop": false
+  },
+  "land": {
+    "take": 1,
+    "loop": false
+  },
+  "ko": {
+    "take": 1,
+    "loop": false
+  },
+  "bell": {
+    "take": 1,
+    "loop": false
+  },
+  "crunch": {
+    "take": 1,
+    "loop": false
+  },
+  "smash": {
+    "take": 1,
+    "loop": false
+  },
+  "win": {
+    "take": 1,
+    "loop": false
+  },
+  "lose": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-rex": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-trike": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-stego": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-raptor": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-ankylo": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-pachy": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-spino": {
+    "take": 1,
+    "loop": false
+  },
+  "roar-giga": {
+    "take": 1,
+    "loop": false
+  },
+  "block": {
+    "take": 1,
+    "loop": false
+  },
+  "charge": {
+    "take": 1,
+    "loop": false
+  },
+  "special": {
+    "take": 1,
+    "loop": false
+  },
+  "wave": {
+    "take": 1,
+    "loop": false
+  },
+  "wood": {
+    "take": 1,
+    "loop": false
+  },
+  "woodBreak": {
+    "take": 1,
+    "loop": false
+  },
+  "rock": {
+    "take": 1,
+    "loop": false
+  },
+  "rockBreak": {
+    "take": 1,
+    "loop": false
+  },
+  "eggCrack": {
+    "take": 1,
+    "loop": false
+  },
+  "hatch": {
+    "take": 1,
+    "loop": false
+  },
+  "pause": {
+    "take": 1,
+    "loop": false
+  }
+}
