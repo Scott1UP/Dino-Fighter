@@ -25,7 +25,7 @@ const touch: [Pad, Pad] = [emptyPad(), emptyPad()];
 
 // Player 1: A/D to move, W to jump, F and G to attack, H for the signature move.
 // Player 2: arrow keys, K and L, and ; for the signature move.
-const KEYMAP: Record<string, [0 | 1, Key]> = {
+export const KEYMAP: Record<string, [0 | 1, Key]> = {
   KeyA: [0, 'left'],
   KeyD: [0, 'right'],
   KeyW: [0, 'jump'],
@@ -51,9 +51,9 @@ export function pad(player: 0 | 1): Pad {
   return out;
 }
 
-const ARROW = (dir: number) =>
+export const ARROW = (dir: number) =>
   `<svg viewBox="0 0 24 24"><path d="${dir < 0 ? 'M17 3 5 12l12 9z' : 'M7 3l12 9-12 9z'}" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"/></svg>`;
-const ICONS = {
+export const ICONS = {
   jump: '<svg viewBox="0 0 24 24"><path d="M12 2 2 13h6v9h8v-9h6z" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"/></svg>',
   // Jaws.
   head: '<svg viewBox="0 0 24 24"><path d="M2 3h20v6l-3 4-3-4-2 4-2-4-2 4-3-4-2 4-3-4z" fill="#fff" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/><path d="M2 21h20v-5l-4-3-3 3-3-3-3 3-3-3-4 3z" fill="#fff" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/></svg>',
@@ -131,6 +131,9 @@ const group = (...children: HTMLElement[]) => {
 
 let usesTouch = matchMedia('(pointer: coarse)').matches;
 let shown: 0 | 1 | 2 = 0;
+
+/** Whether the player is on the touch buttons rather than a keyboard. */
+export const usingTouch = (): boolean => usesTouch;
 
 function layout(): void {
   const root = document.getElementById('pads')!;
