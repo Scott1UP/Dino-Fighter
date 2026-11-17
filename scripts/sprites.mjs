@@ -869,6 +869,49 @@ async function packIcons() {
   console.log('[icons] packed');
 }
 
+/**
+ * The picture shown when a link to the game is shared (public/og.png, 1200 x 630): the logo over
+ * Lava Ridge with Rex and Trixie squaring up. Put together from the packed art at game size,
+ * then enlarged three times with hard pixels.
+ */
+async function packShareImage() {
+  const need = ['stage-volcano.png', 'rex.png', 'trike.png'].map((f) => path.join(OUT, f));
+  const logoSrc = path.join(RAW, 'logo', 'logo.png');
+  for (const f of [...need, logoSrc]) if (!(await exists(f))) return;
+  const W = 400;
+  const H = 210;
+  const FLOOR = 196;
+  /** A fighter's ready stance, cut from its packed sheet. */
+  const ready = async (id, flip) => {
+    const { cellW, cellH } = JSON.parse(await readFile(path.join(OUT, `${id}.json`), 'utf8'));
+    let frame = sharp(path.join(OUT, `${id}.png`)).extract({ left: 0, top: 0, width: cellW, height: cellH });
+    if (flip) frame = frame.flop();
+    return { input: await frame.png().toBuffer(), cellW, cellH };
+  };
+  const rex = await ready('rex', false);
+  const trike = await ready('trike', true);
+  const logoTrim = sharp(await sharp(logoSrc).trim().png().toBuffer());
+  const m = await logoTrim.metadata();
+  const logoW = 184;
+  const logoH = Math.round((m.height / m.width) * logoW);
+  const logo = await pixelate(logoTrim, logoW, logoH);
+  const small = await sharp(path.join(OUT, 'stage-volcano.png'))
+    .extract({ left: 184, top: STAGE_H - H, width: W, height: H })
+    .composite([
+      { input: logo, raw: { width: logoW, height: logoH, channels: 4 }, left: Math.round((W - logoW) / 2), top: 4 },
+      // The fighters go on last, so that a head overlaps the logo rather than hiding behind it.
+      { input: rex.input, left: 60 - rex.cellW / 2, top: FLOOR - rex.cellH },
+      { input: trike.input, left: W - 56 - trike.cellW / 2, top: FLOOR - trike.cellH },
+    ])
+    .png()
+    .toBuffer();
+  await sharp(small)
+    .resize(W * 3, H * 3, { kernel: 'nearest' })
+    .png({ palette: true, colours: 128, dither: 0 })
+    .toFile(path.join(ROOT, 'public', 'og.png'));
+  console.log('[share image] packed');
+}
+
 async function packAll(ids) {
   await mkdir(OUT, { recursive: true });
   for (const id of ids) {
@@ -883,6 +926,7 @@ async function packAll(ids) {
   for (const id of Object.keys(OBJECTS)) await packObject(id).catch((err) => console.error(err.message));
   await packLogo();
   await packIcons();
+  await packShareImage();
 }
 
 const [cmd, ...args] = process.argv.slice(2);
