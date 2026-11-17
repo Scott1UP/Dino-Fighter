@@ -1,0 +1,32 @@
+{
+  "theme": {
+    "take": 1
+  },
+  "volcano": {
+    "take": 1
+  },
+  "jungle": {
+    "take": 1
+  },
+  "boneyard": {
+    "take": 1
+  },
+  "beach": {
+    "take": 1
+  },
+  "meadow": {
+    "take": 1
+  },
+  "dojo": {
+    "take": 1
+  },
+  "peak": {
+    "take": 1
+  },
+  "cove": {
+    "take": 1
+  },
+  "crater": {
+    "take": 1
+  }
+}

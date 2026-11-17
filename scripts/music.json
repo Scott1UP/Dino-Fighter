@@ -1,0 +1,52 @@
+{
+  "theme": {
+    "prompt": "Title theme for an early-1990s 16-bit console one-on-one fighting video game about dinosaurs. Authentic 16-bit cartridge sound: sampled synth brass fanfare lead, punchy slap bass, bright sampled orchestra hits, tight gated drums, with rumbling tribal jungle tom drums underneath. Heroic, driving and triumphant, a bold catchy melody in a minor key, 140 bpm. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "volcano": {
+    "prompt": "Battle theme for a volcano stage in a dinosaur fighting game. Fast, urgent and fiery, in a minor key, 150 bpm, with pounding tribal tom drums and a searing synth lead. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "jungle": {
+    "prompt": "Battle theme for a jungle temple stage in a dinosaur fighting game. Upbeat and adventurous, 135 bpm, with marimba and pan-flute samples, bongos and congas, and a heroic brass melody. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "boneyard": {
+    "prompt": "Battle theme for a desert canyon stage in a dinosaur fighting game. Proud and determined, 128 bpm, with a twangy lead, galloping bass and a soaring heroic chorus. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "beach": {
+    "prompt": "Bonus stage theme in a dinosaur fighting game. Cheeky, bouncy and fun, 160 bpm, a race against the clock, with steel drum samples and a playful brass riff. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "meadow": {
+    "prompt": "Battle theme for a sunny green valley stage in a dinosaur fighting game. Bright, bouncy and optimistic, in a major key, 132 bpm, with a whistling flute lead and plucked strings. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "dojo": {
+    "prompt": "Battle theme for a moonlit martial-arts dojo stage in a dinosaur fighting game. Fast and nimble, 146 bpm, with koto and shakuhachi samples, taiko drums and a sharp kung-fu melody. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "peak": {
+    "prompt": "Battle theme for a stormy mountain-top stage in a dinosaur fighting game. Driving and determined hard-rock style, 142 bpm, with a distorted synth guitar lead and thundering toms. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "cove": {
+    "prompt": "Boss battle theme for a stormy sea cove stage in a dinosaur fighting game. Menacing but exciting, in a minor key, 138 bpm, with a swirling organ, deep bass and crashing cymbals like waves. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  },
+  "crater": {
+    "prompt": "Final boss battle theme in a dinosaur fighting game, in a meteor crater arena at night. Epic, dramatic and relentless, in a minor key, 155 bpm, with choir pad samples, pounding timpani and a soaring heroic lead. Authentic early-1990s 16-bit console fighting game stage music: sampled synth brass and lead, punchy slap bass, bright orchestra hits, tight gated drums. A bold catchy melody that loops. Lo-fi 32 kHz sample-based console sound chip, no modern production, no vocals.",
+    "seconds": 60,
+    "pick": 1
+  }
+}
