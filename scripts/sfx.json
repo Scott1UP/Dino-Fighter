@@ -1,0 +1,162 @@
+{
+  "tap": {
+    "prompt": "A single short menu cursor blip from an early-1990s 16-bit console fighting game. Bright square-wave tick. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "confirm": {
+    "prompt": "A menu confirm sound from an early-1990s 16-bit console fighting game: a punchy metallic clang with a short rising synth zing. Lo-fi sampled. No music.",
+    "seconds": 0.9,
+    "pick": 1
+  },
+  "swing": {
+    "prompt": "A short quick whoosh of a fast swing through the air, as a lo-fi sampled sound effect from a 16-bit console fighting game. No impact. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "hitLight": {
+    "prompt": "A light punch impact sound effect from an early-1990s 16-bit arcade fighting game: one short, dry, crunchy lo-fi smack. No voice. No music.",
+    "seconds": 0.5,
+    "pick": 2
+  },
+  "hitHeavy": {
+    "prompt": "A heavy punch impact sound effect from an early-1990s 16-bit arcade fighting game: one deep, booming, crunchy lo-fi thwack with a short noise burst. No voice. No music.",
+    "seconds": 0.7,
+    "pick": 3
+  },
+  "jump": {
+    "prompt": "A short springy jump sound from a 16-bit console game: a quick soft rising whoosh. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "land": {
+    "prompt": "A heavy dinosaur landing on the ground, as a lo-fi 16-bit console game sound effect: one short low thud. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "ko": {
+    "prompt": "A knockout sound effect from an early-1990s 16-bit arcade fighting game: a big echoing lo-fi impact followed by a heavy body thud on the ground. No voice. No music.",
+    "seconds": 1.5,
+    "pick": 1
+  },
+  "bell": {
+    "prompt": "A single boxing ring bell strike mixed with a small gong, as a lo-fi sampled sound from a 16-bit console fighting game. Round start signal. No music.",
+    "seconds": 1.2,
+    "pick": 1
+  },
+  "crunch": {
+    "prompt": "A car body panel being dented by a heavy hit: one short metallic crunch with a little rattle, as a lo-fi 16-bit console game sound effect. No music.",
+    "seconds": 0.7,
+    "pick": 1
+  },
+  "smash": {
+    "prompt": "A car collapsing into a wreck: a big metal crash with glass tinkling and a hubcap rolling away, comical, as a lo-fi 16-bit console game sound effect. No music.",
+    "seconds": 2,
+    "pick": 1
+  },
+  "win": {
+    "prompt": "A short triumphant victory fanfare jingle from an early-1990s 16-bit console fighting game: sampled synth brass and timpani, heroic, ending on a big held chord. Lo-fi cartridge sound.",
+    "seconds": 4,
+    "pick": 1
+  },
+  "lose": {
+    "prompt": "A short sad but gentle defeat jingle from an early-1990s 16-bit console fighting game: descending sampled synth brass, ending softly. Lo-fi cartridge sound.",
+    "seconds": 3.5,
+    "pick": 1
+  },
+  "roar-rex": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A big deep T-rex bellow.",
+    "seconds": 1.6,
+    "pick": 1
+  },
+  "roar-trike": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A triceratops: a low honking bull-like bellow.",
+    "seconds": 1.5,
+    "pick": 1
+  },
+  "roar-stego": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A stegosaurus: a throaty rumbling groan rising in pitch.",
+    "seconds": 1.5,
+    "pick": 1
+  },
+  "roar-raptor": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A velociraptor: a quick raspy high-pitched screech with a chirp.",
+    "seconds": 1.2,
+    "pick": 1
+  },
+  "roar-ankylo": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. An ankylosaurus: a very low gruff grunting growl.",
+    "seconds": 1.5,
+    "pick": 1
+  },
+  "roar-pachy": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A pachycephalosaurus: a sharp barking honk, twice.",
+    "seconds": 1.3,
+    "pick": 1
+  },
+  "roar-spino": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A spinosaurus: a long hissing crocodile-like roar.",
+    "seconds": 1.8,
+    "pick": 1
+  },
+  "roar-giga": {
+    "prompt": "A dinosaur roar as a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game: crunchy, compressed, low sample rate, slightly cartoonish, not realistic and not scary. No music. A gigantic boss dinosaur: a huge, long, thunderous roar with a deep rumble.",
+    "seconds": 2.2,
+    "pick": 1
+  },
+  "block": {
+    "prompt": "A blocked hit: one short dull padded thud with a tiny metallic tink. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "charge": {
+    "prompt": "Powering up a special move: a rising buzzing synth sweep that climbs in pitch for one second. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 1,
+    "pick": 1
+  },
+  "special": {
+    "prompt": "A special move being unleashed: a fast powerful whoosh with a fiery burst. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.9,
+    "pick": 1
+  },
+  "wave": {
+    "prompt": "A rumbling shockwave rolling along the ground: a short low rocky rumble. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.9,
+    "pick": 1
+  },
+  "wood": {
+    "prompt": "A wooden barrel being hit hard: one short hollow woody crack. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "woodBreak": {
+    "prompt": "A wooden barrel bursting apart into planks: a splintering crash with clattering planks. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 1.2,
+    "pick": 1
+  },
+  "rock": {
+    "prompt": "A big rock being hit hard: one short stony crack with a few pebbles falling. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.6,
+    "pick": 1
+  },
+  "rockBreak": {
+    "prompt": "A big boulder crumbling into rubble: a rocky collapse with tumbling stones. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 1.5,
+    "pick": 1
+  },
+  "eggCrack": {
+    "prompt": "A giant eggshell cracking: one short crisp brittle crack. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  },
+  "hatch": {
+    "prompt": "A giant egg breaking open and a cute baby dinosaur hatching: a shell crack followed by a happy squeaky little chirp-roar. Cute and funny. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 1.8,
+    "pick": 1
+  },
+  "pause": {
+    "prompt": "A game pause sound: two quick descending square-wave bleeps. As a lo-fi sampled sound effect from an early-1990s 16-bit console fighting game. No music.",
+    "seconds": 0.5,
+    "pick": 1
+  }
+}
