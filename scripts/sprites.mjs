@@ -13,7 +13,7 @@
 //   npm run sprites -- pack            re-pack everything from art/raw/ (free: no generation)
 //
 // Raw model output is kept in art/raw/. Packing reduces it to real game pixels and writes
-// public/sprites/. For fighters it also measures every frame's outline, so the game's hit and
+// public/sprites/ (and the page's icons to public/). For fighters it also measures every frame's outline, so the game's hit and
 // hurt boxes are the drawn shape of the dinosaur, not a guess.
 
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
@@ -852,6 +852,23 @@ async function packLogo() {
   console.log(`[logo] packed ${LOGO_PX}x${h}`);
 }
 
+/**
+ * The page's icons, made from Rex's portrait: a browser-tab favicon, the icon iOS uses when the game
+ * is added to the home screen, and the two sizes the web app manifest asks for. Written to public/.
+ */
+const ICONS = { 'favicon.png': 48, 'apple-touch-icon.png': 180, 'icon-192.png': 192, 'icon-512.png': 512 };
+async function packIcons() {
+  const src = path.join(RAW, 'rex', 'portrait.png');
+  if (!(await exists(src))) return;
+  for (const [file, size] of Object.entries(ICONS)) {
+    await sharp(src)
+      .resize(size, size, { kernel: 'lanczos3' })
+      .png({ palette: true, colours: 64, dither: 0 })
+      .toFile(path.join(ROOT, 'public', file));
+  }
+  console.log('[icons] packed');
+}
+
 async function packAll(ids) {
   await mkdir(OUT, { recursive: true });
   for (const id of ids) {
@@ -865,6 +882,7 @@ async function packAll(ids) {
   for (const id of Object.keys(STAGES)) await packStage(id);
   for (const id of Object.keys(OBJECTS)) await packObject(id).catch((err) => console.error(err.message));
   await packLogo();
+  await packIcons();
 }
 
 const [cmd, ...args] = process.argv.slice(2);
